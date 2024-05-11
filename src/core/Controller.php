@@ -9,8 +9,9 @@ class Controller
     {
     }
 
-    public function render(string $temp, array $ar = []): void
+    public function render(string $temp, array $arr = []): void
     {
+        extract($arr);
         require 'views' . $temp . "php";
     }
 }

@@ -1,12 +1,9 @@
 <?php
-
-//define('URL', 'http://localhost/mvc/');
-define('URL', 'http://' . $_SERVER['HTTP_HOST'] . '/exsol/testDep/nocheBC/');
-
-//conexion a la base de datos
-define('HOST', 'localhost');
-define('PORT_DB', '3306');
-define('DB', 'e01');
-define('USER', 'root');
-define('PASSWORD', '');
-define('CHARSET', 'utf8mb4');
+// config.php
+define('DB_HOST', 'localhost');
+define('DB_PORT', '3306');  // Puerto estándar de MySQL, cambia según necesidades
+define('DB_NAME', 'automotora');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '');
+define('DB_CHARSET', 'utf8mb4');
+define('URL_CHARSET', 'utf8mb4');
