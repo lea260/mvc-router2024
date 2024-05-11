@@ -4,13 +4,11 @@ namespace Empresa\App\Core;
 
 class Router
 {
-    protected $routes = [];
-    protected $params = [];
-    private $urlPrefix = "/mvccomposer/";
-
-    public function __construct($urlPrefix = "/mvccomposer/")
-    {
-        $this->urlPrefix = $urlPrefix;  // Optional URL prefix that could be used globally
+    public function __construct(
+        protected array $routes = [],
+        protected array $params = [],
+        private string $urlPrefix = URL_PREFIX,
+    ) {
     }
 
     public function add(string $route, array $params): void
