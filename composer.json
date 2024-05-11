@@ -1,0 +1,11 @@
+{
+    "name": "lcalvetti/mvc",
+    "description": "mvc",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Empresa\\App\\": "src/"
+        }
+    },
+    "require": {}
+}
