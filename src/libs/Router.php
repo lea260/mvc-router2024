@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Empresa\App\Core;
+namespace Empresa\App\Libs;
 
 class Router
 {
     public function __construct(
         protected array $routes = [],
         protected array $params = [],
-        private string $urlPrefix = "",
+        private string $urlPrefix = URL_PREFIX,
     ) {
     }
 
@@ -21,7 +21,7 @@ class Router
 
     public function dispatch(string $url): void
     {
-        //$url = $this->removePrefix($url, $this->urlPrefix);
+        $url = $this->removePrefix($url, $this->urlPrefix);
         $url = $this->removeQueryString($url);
         $url = trim($url, '/');
 

@@ -8,8 +8,8 @@
 </head>
 
 <body>
+    <?php require  'src/views/partials/menu.php'; ?>
     <h1>Auto</h1>
-    
 </body>
 
 </html>

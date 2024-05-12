@@ -7,4 +7,4 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_CHARSET', 'utf8mb4');
 define('URL_PREFIX', '/mvccomposer/');
-define('URL_BASE', 'http://localhost/mvccomposer/');
+define('URL_BASE', 'http://localhost/mvccomposer/index.php?');

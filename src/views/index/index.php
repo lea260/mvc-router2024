@@ -7,56 +7,52 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-    }
-
-    .menu {
-      margin: auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu h1 {
-      color: #333;
-    }
-
-    .menu ul {
-      list-style-type: none;
+      margin: 0;
       padding: 0;
+      background-color: #f4f4f4;
     }
 
-    .menu ul li {
-      padding: 10px;
-      margin-top: 10px;
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      /* Espaciado interno alrededor del contenido del navbar */
+      display: flex;
+      justify-content: center;
+      /* Centra los elementos de la lista en la barra de navegación */
+      align-items: center;
+      /* Alinea los elementos verticalmente */
     }
 
-    .menu ul li a {
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar li {
+      margin: 0 10px;
+      /* Espacio horizontal entre cada elemento */
+    }
+
+    .navbar a {
       text-decoration: none;
       color: blue;
       font-size: 16px;
+      transition: color 0.3s;
+      /* Suaviza el cambio de color */
     }
 
-    .menu ul li a:hover {
-      text-decoration: underline;
+    .navbar a:hover {
+      color: darkblue;
+      /* Cambia el color al pasar el ratón */
     }
   </style>
 </head>
 
 <body>
-  <div class="menu">
-    <h1>Gestión de Autos</h1>
-    <ul>
-      <li><a href="<?= URL_BASE; ?>index.php/autos/nuevo">Crear Auto</a></li>
-      <li><a href="<?= URL_BASE; ?>index.php/autos/listar">Listar Autos</a></li>
-      <li><a href="actualizar.php">Actualizar Auto</a></li>
-      <li><a href="eliminar.php">Eliminar Auto</a></li>
-    </ul>
-  </div>
+  <?php require  'src/views/partials/menu.php'; ?>
 </body>
 
 </html>

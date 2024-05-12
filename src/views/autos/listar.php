@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    <?php require 'src/views/partials/menu.php'; ?>
     <h1>Listado de Autos</h1>
     <table>
         <tr>
@@ -32,6 +33,7 @@
             <th>Marca</th>
             <th>Modelo</th>
             <th>Fecha de Compra</th>
+            <th>Editar</th>
         </tr>
         <?php foreach ($autos as $auto) : ?>
             <tr>
@@ -39,6 +41,7 @@
                 <td><?= htmlspecialchars($auto->getMarca()) ?></td>
                 <td><?= htmlspecialchars($auto->getModelo()) ?></td>
                 <td><?= htmlspecialchars($auto->getFechaCompra()) ?></td>
+                <td><a href="<?= URL_BASE ?>r=autos/editar&id=<?= htmlspecialchars($auto->getId()) ?>">Editar</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
