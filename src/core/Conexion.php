@@ -1,6 +1,10 @@
 <?php
 
-require_once 'config.php';  // Incluir configuración de la base de datos
+namespace Empresa\App\Core;
+
+use PDO;
+use PDOException;
+
 
 class Conexion
 {

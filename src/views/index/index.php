@@ -51,8 +51,8 @@
   <div class="menu">
     <h1>Gestión de Autos</h1>
     <ul>
-      <li><a href="crear.php">Crear Auto</a></li>
-      <li><a href="listar.php">Listar Autos</a></li>
+      <li><a href="<?= URL_BASE; ?>index.php/autos/nuevo">Crear Auto</a></li>
+      <li><a href="<?= URL_BASE; ?>index.php/autos/listar">Listar Autos</a></li>
       <li><a href="actualizar.php">Actualizar Auto</a></li>
       <li><a href="eliminar.php">Eliminar Auto</a></li>
     </ul>
