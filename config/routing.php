@@ -11,4 +11,4 @@ $router->add(
 $router->add('index.php', ['controller' => 'Index', 'action' => 'index']);
 $router->add('articulo/listar', ['controller' => 'Articulo', 'action' => 'listar']);
 //http: //localhost/mvccomposer/index.php/auto/nuevo
-$router->add('/auto/nuevo', ['controller' => 'Auto', 'action' => 'nuevo']);
+$router->add('auto/nuevo', ['controller' => 'Auto', 'action' => 'nuevo']);

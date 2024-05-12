@@ -12,6 +12,6 @@ class Controller
     public function render(string $temp, array $arr = []): void
     {
         extract($arr);
-        require 'views' . $temp . "php";
+        require 'src/views/' . $temp . ".php";
     }
 }

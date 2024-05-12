@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Menú Principal - Gestión de Autos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .menu {
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu h1 {
+      color: #333;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu ul li {
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: blue;
+      font-size: 16px;
+    }
+
+    .menu ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>hola desde vista</h1>
-  <li><a href="index.php?c=articulos&m=listar">
-      listar articulos
-    </a></li>
-  <?php
-  var_dump($data);
-  ?>
-
-  <form action="index.php?c=test&m=hola" method="post">
-    <label for="nombre">
-      <input type="text" id="nombre" name="nombre" value="Diego">
-    </label>
-    <label for="apellido">
-      <input type="text" id="hola" name="apellido" value="Forlan">
-    </label>
-    <input type="submit" value="enviar">
-  </form>
+  <div class="menu">
+    <h1>Gestión de Autos</h1>
+    <ul>
+      <li><a href="crear.php">Crear Auto</a></li>
+      <li><a href="listar.php">Listar Autos</a></li>
+      <li><a href="actualizar.php">Actualizar Auto</a></li>
+      <li><a href="eliminar.php">Eliminar Auto</a></li>
+    </ul>
+  </div>
 </body>
 
 </html>

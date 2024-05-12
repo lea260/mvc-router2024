@@ -8,6 +8,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        echo 'Welcome to the Home Page!';
+        $this->render('index/index');
     }
 }
