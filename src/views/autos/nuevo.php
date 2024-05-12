@@ -11,7 +11,7 @@
 <body>
     <?php require  'src/views/partials/menu.php'; ?>
     <h1>crear auto</h1>
-    <form action="<?= URL_BASE; ?>index.php/autos/crear" method="POST">
+    <form action="<?= URL_BASE; ?>autos/crear" method="POST">
         <label for="marca">Marca:</label>
         <input type="text" id="marca" name="marca" required><br><br>
 

@@ -26,7 +26,7 @@
                 <td><?= htmlspecialchars($auto->getMarca()) ?></td>
                 <td><?= htmlspecialchars($auto->getModelo()) ?></td>
                 <td><?= htmlspecialchars($auto->getFechaCompra()) ?></td>
-                <td><a href="<?= URL_BASE ?>r=autos/editar&id=<?= htmlspecialchars($auto->getId()) ?>">Editar</a></td>
+                <td><a href="<?= URL_BASE ?>autos/editar&id=<?= htmlspecialchars($auto->getId()) ?>">Editar</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

@@ -52,7 +52,7 @@ class Auto
         $auto = new Auto(
             id: $row['id'],
             marca: $row['Marca'],
-            modelo: $row['Marca'],
+            modelo: $row['Modelo'],
             fechaCompra: $row['Fecha_Compra'],
         );
         return $auto;
@@ -83,13 +83,40 @@ class Auto
         }
     }
 
-    public function actualizar(): bool
+    public static function obtenerPorId(int $id): ?Auto
     {
         $pdo = null;
         $stmt = null;
         try {
             $pdo = Conexion::getPDOConnection();
-            $sql = "UPDATE LanzamientosModelos SET Marca = :marca, Modelo = :modelo, Fecha_Compra = :fechaCompra WHERE ID = :id";
+            $sql = "SELECT id, Marca, Modelo, Fecha_Compra FROM LanzamientosModelos WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Fetch the auto data
+            $row = $stmt->fetch();
+            if ($row) {
+                $auto = self::arrayToAuto($row);
+                return $auto;
+            }
+        } catch (PDOException $e) {
+            error_log("Error al obtener auto: " . $e->getMessage());
+            // Consider handling or re-throwing the exception depending on your error handling policy
+        } finally {
+            if ($stmt) $stmt = null;
+            if ($pdo) $pdo = null;
+        }
+        return null;
+    }
+
+    public function modificar(): bool
+    {
+        $pdo = null;
+        $stmt = null;
+        try {
+            $pdo = Conexion::getPDOConnection();
+            $sql = "UPDATE LanzamientosModelos SET Marca=:marca, Modelo=:modelo, Fecha_Compra=:fechaCompra WHERE id=:id";
             $stmt = $pdo->prepare($sql);
 
             $stmt->bindParam(':marca', $this->marca, PDO::PARAM_STR);

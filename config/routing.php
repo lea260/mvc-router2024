@@ -12,3 +12,5 @@ $router->add('index.php', ['controller' => 'Index', 'action' => 'index']);
 $router->add('autos/nuevo', ['controller' => 'Auto', 'action' => 'nuevo']);
 $router->add('autos/crear', ['controller' => 'Auto', 'action' => 'crear']);
 $router->add('autos/listar', ['controller' => 'Auto', 'action' => 'listar']);
+$router->add('autos/editar', ['controller' => 'Auto', 'action' => 'editar']);
+$router->add('autos/modificar', ['controller' => 'Auto', 'action' => 'modificar']);

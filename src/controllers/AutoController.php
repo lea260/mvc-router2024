@@ -27,7 +27,7 @@ class AutoController extends Controller
 
             $marca = $_POST['marca'] ?? '';
             $modelo = $_POST['modelo'] ?? '';
-            $fechaCompra = $_POST['fecha_compra'] ?? '';
+            $fechaCompra = $_POST['fechaCompra'] ?? '';
             // Crear instancia de Auto
             $auto = new Auto($marca, $modelo, $fechaCompra);
 
@@ -37,7 +37,36 @@ class AutoController extends Controller
             } else {
                 $mensaje = "Error al registrar el auto.";
             }
-            $this->render('autos/crear', ["mensaje" => $mensaje]);
+            $this->render('autos/mensaje', ["mensaje" => $mensaje]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+    public function modificar()
+    {
+        $mensaje = "";
+        try {
+            //code...
+
+            $id = (int) $_POST['id'] ?? '';
+            $marca = $_POST['marca'] ?? '';
+            $modelo = $_POST['modelo'] ?? '';
+            $fechaCompra = $_POST['fechaCompra'] ?? '';
+            // Crear instancia de Auto
+            $auto = new Auto(
+                id: $id,
+                marca: $marca,
+                modelo: $modelo,
+                fechaCompra: $fechaCompra
+            );
+
+            // Insertar en la base de datos
+            if ($auto->modificar()) {
+                $mensaje = "El auto ha sido modificado con éxito.";
+            } else {
+                $mensaje = "Error al modificar el auto.";
+            }
+            $this->render('autos/mensaje', ["mensaje" => $mensaje]);
         } catch (\Throwable $th) {
             //throw $th;
         }
@@ -47,6 +76,20 @@ class AutoController extends Controller
         try {
             $autos = Auto::listar();
             $this->render('autos/listar', ["autos" => $autos]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
+    public function editar()
+    {
+
+        try {
+            //code...
+            $id = (int)$_GET['id'] ?? '';
+            $auto = Auto::obtenerPorId($id);
+            // Insertar en la base de datos
+            $this->render('autos/editar', ["auto" => $auto]);
         } catch (\Throwable $th) {
             //throw $th;
         }
