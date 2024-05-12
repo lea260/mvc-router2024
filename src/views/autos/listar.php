@@ -3,25 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="<?= URL_BASE_PATH ?>public/css/index/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= URL_BASE_PATH ?>public/css/autos/listar.css" rel="stylesheet">
     <title>Listado de Autos</title>
-    <style>
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
 
-        th,
-        td {
-            border: 1px solid #cccccc;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #eeeeee;
-        }
-    </style>
 </head>
 
 <body>

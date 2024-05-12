@@ -10,6 +10,7 @@ use PDOException;
 
 class Conexion
 {
+    private static $instancia = null;
     // Método estático para obtener la conexión PDO
     public static function getPDOConnection(): PDO
     {
@@ -22,7 +23,8 @@ class Conexion
         ];
 
         try {
-            return new PDO($dsn, DB_USER, DB_PASSWORD, $options);
+            self::$instancia = new PDO($dsn, DB_USER, DB_PASSWORD, $options);
+            return self::$instancia;
         } catch (PDOException $e) {
             throw new PDOException($e->getMessage(), (int)$e->getCode());
         }
