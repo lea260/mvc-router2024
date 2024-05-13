@@ -19,7 +19,7 @@
         <input type="text" id="modelo" name="modelo" required><br><br>
 
         <label for="fecha_compra">Fecha de Compra:</label>
-        <input type="date" id="fecha_compra" name="fecha_compra" required><br><br>
+        <input type="date" id="fecha_compra" name="fechaCompra" required><br><br>
 
         <button type="submit">Registrar Modelo</button>
     </form>
