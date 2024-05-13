@@ -104,8 +104,8 @@ class Auto
             error_log("Error al obtener auto: " . $e->getMessage());
             // Consider handling or re-throwing the exception depending on your error handling policy
         } finally {
-            if ($stmt) $stmt = null;
-            if ($pdo) $pdo = null;
+            $stmt = null;
+            $pdo = null;
         }
         return null;
     }
@@ -134,17 +134,15 @@ class Auto
         }
     }
 
-    public function eliminar(): bool
+    public static function borrar($id): bool
     {
         $pdo = null;
         $stmt = null;
         try {
             $pdo = Conexion::getPDOConnection();
-            $sql = "DELETE FROM LanzamientosModelos WHERE ID = :id";
+            $sql = "DELETE FROM LanzamientosModelos WHERE id=:id";
             $stmt = $pdo->prepare($sql);
-
-            $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
-
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             return $stmt->execute();
         } catch (PDOException $e) {
             error_log("Error al eliminar auto: " . $e->getMessage());

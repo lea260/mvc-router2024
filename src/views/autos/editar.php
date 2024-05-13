@@ -11,7 +11,7 @@
     <h1>Editar Auto</h1>
 
     <!-- Formulario de Edición -->
-    <form action="<?= URL_BASE; ?>autos/modificar" method="post">
+    <form action="<?= URL_BASE ?>autos/modificar" method="post">
         <input type="hidden" name="id" value="<?= htmlspecialchars($auto->getId()) ?>">
 
         <label for="marca">Marca:</label>
@@ -28,9 +28,9 @@
 
         <button type="submit">Actualizar Auto</button>
     </form>
-
+    <br>
     <!-- Formulario de Eliminación -->
-    <form action="eliminar_auto.php" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este auto?');">
+    <form action="<?= URL_BASE ?>autos/borrar" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este auto?');">
         <input type="hidden" name="id" value="<?= htmlspecialchars($auto->getId()) ?>">
         <button type="submit" style="background-color: red; color: white;">Eliminar Auto</button>
     </form>

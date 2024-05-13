@@ -71,6 +71,25 @@ class AutoController extends Controller
             //throw $th;
         }
     }
+    public function borrar()
+    {
+        $mensaje = "";
+        try {
+            //code...
+
+            $id = (int) $_POST['id'] ?? '';
+            // Crear instancia de Auto
+            // Insertar en la base de datos
+            if (Auto::borrar($id)) {
+                $mensaje = "El auto ha sido borrado con éxito.";
+            } else {
+                $mensaje = "Error al borrar el auto.";
+            }
+            $this->render('autos/mensaje', ["mensaje" => $mensaje]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
     public function listar()
     {
         try {
