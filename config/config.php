@@ -3,7 +3,7 @@
 
 define('URL_PREFIX', '/mvccomposer/');
 define('URL_BASE_PATH', 'http://' . $_SERVER['HTTP_HOST'] . URL_PREFIX);
-define('URL_BASE', URL_BASE_PATH . '/index.php?r=');
+define('URL_BASE', URL_BASE_PATH . 'index.php?r=');
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');  // Puerto estándar de MySQL, cambia según necesidades
 define('DB_NAME', 'automotora');
