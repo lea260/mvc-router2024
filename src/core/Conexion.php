@@ -29,4 +29,8 @@ class Conexion
             throw new PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
+    public static function cerrar(): void
+    {
+        self::$instancia = null;
+    }
 }

@@ -106,6 +106,7 @@ class Auto
         } finally {
             $stmt = null;
             $pdo = null;
+            Conexion::cerrar();
         }
         return null;
     }
