@@ -1,7 +1,7 @@
 <?php
 // config.php
 
-define('URL_PREFIX', '/mvccomposer/');
+define('URL_PREFIX', '/prj01/Proyecto/');
 define('URL_BASE_PATH', 'http://' . $_SERVER['HTTP_HOST'] . URL_PREFIX);
 define('URL_BASE', URL_BASE_PATH . 'index.php?r=');
 define('DB_HOST', 'localhost');
